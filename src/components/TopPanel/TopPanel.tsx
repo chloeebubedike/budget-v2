@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, styled, Typography } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
@@ -7,6 +7,44 @@ type TopPanelProps = {
   pageName: string;
 };
 
+const Container = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  width: "1300px",
+  height: "115px",
+  padding: "20px",
+  color: theme.palette.primary.main,
+  // width: "100%",
+}));
+
+const TextContainer = styled(Box)(() => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: "20px",
+}));
+
+const DateContainer = styled(Box)(() => ({
+  display: "flex",
+  flexDirection: "row",
+}));
+
+const DateTypography = styled(Box)(() => ({
+  fontSize: "24px",
+  lineHeight: "28px",
+  letterSpacing: 3.2,
+}));
+
+const PageNameTypography = styled(Box)(() => ({
+  fontSize: "20px",
+  letterSpacing: 2.75,
+}));
+
+const ArrowNavigationContainer = styled(Box)(() => ({
+  display: "flex",
+  flexDirection: "row",
+  gap: "25px",
+}));
 export const TopPanel = ({ pageName }: TopPanelProps) => {
   const currentDate = new Date();
 
@@ -34,39 +72,18 @@ export const TopPanel = ({ pageName }: TopPanelProps) => {
 
   const formattedDate = formatMonthYear(currentDate);
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        width: "1300px",
-        height: "115px",
-        paddingTop: "20px",
-        // width: "100%",
-      }}
-    >
-      <Box sx={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-        <Box sx={{ display: "flex", flexDirection: "row" }}>
-          <Typography
-            sx={{
-              fontFamily: "Tenor Sans, sans-serif",
-              fontSize: "24px",
-              lineHeight: "28px",
-              letterSpacing: 3.2,
-            }}
-          >
-            {formattedDate}
-          </Typography>
+    <Container>
+      <TextContainer>
+        <DateContainer>
+          <DateTypography>{formattedDate}</DateTypography>
           <ExpandMoreIcon />
-        </Box>
-        <Typography sx={{ fontSize: "20px", letterSpacing: 2.75 }}>
-          {pageName}
-        </Typography>
-      </Box>
-      <Box sx={{ display: "flex", flexDirection: "row", gap: "25px" }}>
+        </DateContainer>
+        <PageNameTypography>{pageName}</PageNameTypography>
+      </TextContainer>
+      <ArrowNavigationContainer>
         <ArrowBackIcon />
         <ArrowForwardIcon />
-      </Box>
-    </Box>
+      </ArrowNavigationContainer>
+    </Container>
   );
 };

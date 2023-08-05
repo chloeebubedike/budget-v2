@@ -5,7 +5,8 @@ import { TopPanel } from "../components/TopPanel/TopPanel";
 const SpreadsheetContainer = styled(Box)(() => ({
   marginTop: "50px",
   display: "flex",
-  gap: "10px",
+  gap: "100px",
+  flexWrap: "wrap",
 }));
 
 export const Budget = () => {

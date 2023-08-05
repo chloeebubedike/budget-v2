@@ -31,6 +31,7 @@ export const SpreadsheetBox = ({ spreadsheetName }: SpreadsheetBoxProps) => {
   const [data, setData] = useState([
     [{ value: "Full time" }, { value: "£400" }, { value: "£400" }],
     [{ value: "Interest" }, { value: "£60" }, { value: "£80" }],
+    [{ value: "Total" }, { value: "£460" }, { value: "£480" }],
   ]);
   return (
     <Container>
