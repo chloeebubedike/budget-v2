@@ -1,0 +1,39 @@
+#root {
+  /* padding: 2rem; */
+  /* max-width: 1280px; */
+  /* width: "100%"; */
+  /* margin: 0 auto; */
+  /* padding: 2rem; */
+  /* text-align: center; */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-container {
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  font-family: sans-serif;
+}
+
+.side-panel {
+  width: 255px;
+}
+.main-content {
+  flex: 1;
+}
+
+th.Spreadsheet__header {
+  background-color: #dde8ea;
+  color: #746978;
+  padding: 10px;
+  font-weight: 550;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+}
+
+tbody {
+  color: #746978;
+}
